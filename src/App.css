@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+
+
+.custom-shape-divider-bottom-1725514428 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  /* line-height: 0; */
+  transform: rotate(180deg);
+}
+
+
+.custom-shape-divider-bottom-1725514428 svg {
+  position: relative;
+  /* display: block; */
+  width: 100%;
+  height: 100px
+}
+
+.custom-shape-divider-bottom-1725514428 .shape-fill {
+  fill: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .custom-shape-divider-bottom {
+    display: none;
+  }
+}
+
+.white-line {
+  width: 100%;
+  /* height: 2px; Adjust the height of the line */
+  
+  background-color: white;
+  border: 1px solid white;
+  position: absolute;
+  bottom: 0;
+}
+
+
+
+
+/*  */
+
+.custom-shape-divider-top-1725608547 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  z-index: 1; /* Ensure the SVG stays behind the form */
+}
+
+.custom-shape-divider-top-1725608547 svg {
+  position: relative;
+  display: block;
+  width: calc(251% + 1.3px);
+  height: 197px;
+}
+
+.custom-shape-divider-top-1725608547 .shape-fill {
+  fill: #FFFFFF;
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+  .custom-shape-divider-top-1725608547 svg {
+    width: calc(300% + 1.3px);
+    height: 240px;
+  }
+}
+
+
+
+
+/*About us  */
+.custom-shape-divider-bottom-1725622578 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1725622578 svg {
+  position: relative;
+  display: block;
+  width: calc(251% + 1.3px);
+  height: 297px;
+}
+
+.custom-shape-divider-bottom-1725622578 .shape-fill {
+  fill: #FFFFFF; /* Change to desired background color */
+}
+
+/* For mobile devices */
+@media (max-width: 767px) {
+  .custom-shape-divider-bottom-1725622578 svg {
+    width: calc(300% + 1.3px);
+    height: 500px;
+  }
+}
+
