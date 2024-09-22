@@ -42,7 +42,7 @@ function App() {
               <ImageSlider />
               <PleasedDisplay />
               <KeyFeaturesSection />
-              <LectureProfiles />
+              // <LectureProfiles />
               <StudentOpinions />
               <YouTubeChannelPromo />
               <CounsellingSection />
