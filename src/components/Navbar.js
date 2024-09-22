@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <img src="Spardha-1.jpg" alt="MyLogo" className="h-10 w-auto mr-2" /> {/* Replace with your logo image path */}
+          <img src="Spardha sarathi logo copy.png" alt="MyLogo" className="h-10 w-auto mr-2" /> {/* Replace with your logo image path */}
         </div>
 
         {/* Desktop Menu */}
