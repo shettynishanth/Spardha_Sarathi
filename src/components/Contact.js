@@ -22,19 +22,19 @@ const ContactPage = () => {
               <span><strong>Address:</strong> <br/>Spardha Sarathi KAS Academy
             <br/> 196-5, 6th ward,
              <br/> Kundapura Main Rd, Old Bustand,
-            <br/>near Municipality, Kundapura, Karnataka 576201</span>
+            <br/>near Municipal, Kundapura, Karnataka 576201</span>
             </p>
             <p className="flex items-center">
               <FaPhoneAlt className="mr-2 text-green-600" />
-              <span><strong>Phone:</strong> +91 7019130402</span>
+              <span><strong>Phone:</strong> +91 7019130402 <br/> +91 9448302476 </span>
             </p>
             <p className="flex items-center">
               <FaEnvelope className="mr-2 text-red-600" />
-              <span><strong>Email:</strong> spardhasarathi@gmail.com</span>
+              <span><strong>Email:</strong> spardhasarathiacademy@gmail.com</span>
             </p>
             <p className="flex items-center">
               <FaClock className="mr-2 text-yellow-600" />
-              <span><strong>Working Hours:</strong> Monday - Saturday, 9 AM - 6 PM</span>
+              <span><strong>Working Hours:</strong> Monday - Sunday, 9 AM - 6 PM</span>
             </p>
           </div>
         </div>
