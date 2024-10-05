@@ -42,9 +42,10 @@ function App() {
               <ImageSlider />
               <PleasedDisplay />
               <KeyFeaturesSection />
-  
-              <StudentOpinions />
+
+            
               <YouTubeChannelPromo />
+              <StudentOpinions />
               <CounsellingSection />
               <StudentForm />
               <Footer />
