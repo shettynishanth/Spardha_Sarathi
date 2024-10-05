@@ -51,7 +51,9 @@ const AboutSection = () => {
             descVisible ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          Spardha Sarathi KAS Academy is committed to empowering future leaders by providing top-notch coaching and resources tailored to KAS aspirants. Our mission is to foster excellence in education and help students achieve their career goals.
+          Spardha Sarathi KAS Academy is committed to empowering future leaders by providing top-notch coaching and resources tailored to KAS aspirants. Our mission is to foster excellence in education and help students achieve their career goals. <br/>
+          <br/>
+          ಸ್ಪರ್ಧಾ ಸರಥಿ KAS ಅಕಾಡೆಮಿ, ಭವಿಷ್ಯದ ನಾಯಕರನ್ನು ಶಕ್ತಿಶಾಲಿಗಳನ್ನಾಗಿಸಲು ಸಮರ್ಪಿತವಾಗಿದ್ದು, KAS ಅಭ್ಯಾಸಾರ್ಥಿಗಳಿಗೆ ಉತ್ಕೃಷ್ಟ ತರಬೇತಿಯನ್ನು ಮತ್ತು ಸಂಪನ್ಮೂಲಗಳನ್ನು ಒದಗಿಸುತ್ತಿದೆ. ನಮ್ಮ ಧ್ಯೇಯವು ಶಿಕ್ಷಣದಲ್ಲಿ ಅತಿಲೋಕದ ಅನುಭವವನ್ನು ಬೆಳೆಸುವುದು ಮತ್ತು ವಿದ್ಯಾರ್ಥಿಗಳಿಗೆ ಅವರ ವೃತ್ತಿ ಗುರಿಗಳನ್ನು ಸಾಧಿಸಲು ಸಹಾಯ ಮಾಡುವುದು.
         </p>
 
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -69,9 +71,10 @@ const AboutSection = () => {
               />
               <h3 className="mt-6 text-xl font-semibold text-gray-800">
                 Experienced Faculty
+                 {/* <br/> ಅನುಭವದ ಶಿಕ್ಷಕವೃಂದ */}
               </h3>
               <p className="mt-4 text-gray-600">
-                Learn from the best with our seasoned educators.
+                Learn from the best with our seasoned educators. <br/> ನಮ್ಮ ಅನುಭವದ ಅಧ್ಯಾಪಕರಿಂದ ಉತ್ತಮ ತರಬೇತಿ ಪಡೆಯಿರಿ.
               </p>
             </div>
   
@@ -88,10 +91,12 @@ const AboutSection = () => {
                 className="mx-auto h-40 w-40 rounded-full object-cover"
               />
               <h3 className="mt-6 text-xl font-semibold text-gray-800">
-                Comprehensive Study Material
+                Comprehensive Study Material 
+                {/* <br/> ಸಮಗ್ರ ಅಧ್ಯಯನ ಸಾಮಗ್ರಿ */}
               </h3>
               <p className="mt-4 text-gray-600">
                 Access extensive resources to guide your studies.
+                <br/>ನಿಮ್ಮ ಅಧ್ಯಯನವನ್ನು ಮಾರ್ಗದರ್ಶನ ಮಾಡಲು ವಿಶಾಲ ಸಂಪನ್ಮೂಲಗಳನ್ನು  ಪ್ರವೇಶಿಸಿ.
               </p>
             </div>
   
@@ -107,10 +112,10 @@ const AboutSection = () => {
                 className="mx-auto h-40 w-40 rounded-full object-cover"
               />
               <h3 className="mt-6 text-xl font-semibold text-gray-800">
-                Proven Success Stories
+                Proven Success Stories 
               </h3>
               <p className="mt-4 text-gray-600">
-                Join a community of successful KAS achievers.
+              Join the community of successful Spardha Sarathi achievers <br/> ಯಶಸ್ಸು ಸಾಧಿಸಿದ ಸ್ಪರ್ಧಾ ಸರಥಿ ವಿದ್ಯಾರ್ಥಿಗಳ ಸಮುದಾಯವನ್ನು ಸೇರುವಂತೆ.
               </p>
             </div>
           </div>
