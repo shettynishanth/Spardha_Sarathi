@@ -40,7 +40,7 @@ function App() {
               <HeroSection />
               <AboutSection />
               <ImageSlider />
-              <PleasedDisplay />
+              // <PleasedDisplay />
               <KeyFeaturesSection />
 
             
