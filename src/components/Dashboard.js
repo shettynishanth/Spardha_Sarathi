@@ -15,7 +15,6 @@ const StudentDashboard = () => {
     <ReisteredDetails/>
     <ImageUpload1/>
     <ImageDisplay/>
-    <PleasedStudent/>
     <UpdateLecture/>
         <AdminTextPage/>
 
