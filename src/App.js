@@ -19,6 +19,8 @@ import CounsellingSection from "./components/CounsellingSection";
 import YouTubeChannelPromo from "./components/YouTubeChannelPromo";
 import LectureProfiles from "./components/LectureProfiles";
 import GalleryPage from "./components/GalleryPage";
+import MovingText from "./components/MovingText";
+
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
+            <MovingText />
               <HeroSection />
               <AboutSection />
               <ImageSlider />
