@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import ImageSlider from "./components/ImageSlider";
-import PleasedDisplay from "./components/PleasedDisplay";
+// import PleasedDisplay from "./components/PleasedDisplay";
 import KeyFeaturesSection from "./components/KeyFeaturesSection";
 import Footer from "./components/Footer";
 import AdminLogin from "./components/AdminLogin";
@@ -21,6 +21,7 @@ import LectureProfiles from "./components/LectureProfiles";
 import GalleryPage from "./components/GalleryPage";
 import MovingText from "./components/MovingText";
 
+// import FeedbackButton from "./components/feedback";
 
 function App() {
   return (
@@ -39,19 +40,20 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
-            <MovingText />
+              <MovingText />
               <HeroSection />
               <AboutSection />
               <ImageSlider />
-              // <PleasedDisplay />
+              {/* <PleasedDisplay /> */}
               <KeyFeaturesSection />
-
-            
-              <YouTubeChannelPromo />
+              {/* <LectureProfiles /> */}
               <StudentOpinions />
+              <YouTubeChannelPromo />
               <CounsellingSection />
               <StudentForm />
               <Footer />
+
+              {/* <FeedbackButton/> */}
             </>
           }
         />
