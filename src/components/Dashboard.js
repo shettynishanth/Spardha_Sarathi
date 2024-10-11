@@ -3,6 +3,8 @@ import ImageUpload1 from "./ImageUpload1";
 import PleasedStudent from "./PleasedStudent";
 import ReisteredDetails from "./ReisteredDetails";
 import UpdateLecture from "./UpdateLecture";
+import AdminTextPage from "./AdminTextPage";
+
 
 // src/components/Dashboard.js
 const StudentDashboard = () => {
@@ -15,6 +17,8 @@ const StudentDashboard = () => {
     <ImageDisplay/>
     <PleasedStudent/>
     <UpdateLecture/>
+        <AdminTextPage/>
+
     </>
   );
 };
