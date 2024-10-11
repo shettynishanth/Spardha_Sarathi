@@ -44,16 +44,14 @@ function App() {
               <HeroSection />
               <AboutSection />
               <ImageSlider />
-              {/* <PleasedDisplay /> */}
+              
               <KeyFeaturesSection />
-              {/* <LectureProfiles /> */}
               <StudentOpinions />
               <YouTubeChannelPromo />
               <CounsellingSection />
               <StudentForm />
               <Footer />
 
-              {/* <FeedbackButton/> */}
             </>
           }
         />
