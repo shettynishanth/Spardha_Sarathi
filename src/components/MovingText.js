@@ -24,7 +24,7 @@ const MovingText = () => {
     <>
       {/* WhatsApp Icon */}
       <a
-        href="https://wa.me/yourphonenumber" // Replace with your WhatsApp link
+        href="https://wa.me/+917019130402"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-20 right-4 z-50 bg-white rounded-full p-3 shadow-lg transition-transform duration-300 hover:scale-110"
