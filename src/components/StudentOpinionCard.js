@@ -25,23 +25,40 @@ const StudentOpinionCard = ({ student, bgColor }) => {
 const StudentOpinions = () => {
   const students = [
     {
-      name: 'John Doe',
-      opinion: 'This program has changed my life! I have learned so much.',
+      name: 'ಅನ್ವಿತಾ ಆಚಾರ್ KAS ಅಭ್ಯರ್ಥಿ',
+      opinion:
+        'ಪರೀಕ್ಷೆಗೆ ತಯಾರಾಗುವುದಕ್ಕೆ ಹೇಗೆ ಓದಬೇಕು..? ಎನ್ನುವಬೋಧನೆಯ ಜೊತೆಗೆ ಜೀವನದ ಮೌಲ್ಯಗಳನ್ನು ನೀಡುವ ಮತ್ತು ಧ್ಯಾನ, ಮೌನದ ಮೂಲಕ ಓದಿಸಿ ಗುರಿಯೆಡೆಗೆ ಪ್ರೇರೆಪಿಸುವ ಸಂಸ್ಥೆ ಎಂದರೆ ಸ್ಪರ್ಧಾ ಸಾರಥಿ.',
       photo: '/images/john.jpg',
     },
     {
-      name: 'Jane Smith',
-      opinion: 'The instructors are fantastic, and the community is supportive. I really appreciate the way they teach.',
+      name: 'ದರ್ಶನ್ PSI ಅಭ್ಯರ್ಥಿ',
+      opinion:
+        'ಸ್ಪರ್ಧಾ ಸಾರಥಿ ಅಕಾಡೆಮಿಗೆ ಸೇರುವುದಕ್ಕೆ ಮುಂಚೆ ಪೊಲೀಸ್ ಸಬ್‌ಇನ್ಸ್‌ಪೆಕ್ಟರ್ - ಆದ್ದೇಕು ಅನ್ನೋದು ನನ್ನ ಕನಸಾಗಿತ್ತು...',
       photo: '/images/jane.jpg',
     },
     {
-      name: 'Adarsh Kela',
-      opinion: 'I love the interactive sessions and hands-on projects. These sessions provide great practical knowledge.',
+      name: '-ರಕ್ಷಿತಾ ಕೆಳಸುಂಕ KAS ಅಭ್ಯರ್ಥಿ',
+      opinion: 'ಸ್ಪರ್ಧಾ ಸಾರಥಿ ನಿಜಕ್ಕೂ ನೈತಿಕ ಮೌಲ್ಯಗಳನ್ನು ತುಂಬಿದ ಅಧಿಕಾರಿಗಳನ್ನು ತಯಾರಿ ಮಾಡುವ ಫ್ಯಾಕ್ಟರಿ ಇದು. ಇಲ್ಲಿನ ವಿನೂತನ ಪರಿಕಲ್ಪನೆ ನಮ್ಮನ್ನು ದಿನಗಟ್ಟಲೇ ಕೂತು ಓದುವ ಹಾಗೆ ಮಾಡಿದೆ.',
+      photo: '/images/jane.jpg',
+    },
+    {
+      name: 'ರಕ್ಷಿತಾ ಸ್ಪರ್ಧಾ ಸಾರಥಿ ಅಕಾಡೆಮಿ',
+      opinion: 'ಅಬ್ಬಾ! ಈ ತರ ಒಂದು ಕೋಚಿಂಗ್ ಅಕಾಡೆಮಿ ಇರುತ್ತೆ ಅನ್ನುವ ಕಲ್ಪನೆಯೂ ನಮಗೆ ಇರಲಿಲ್ಲ!.',
       photo: '/images/adarsh.jpg',
     },
+    {
+      name: 'ಶಾರ್ವರಿ ಸ್ಪರ್ಧಾ ಸಾರಥಿ ಅಕಾಡೆಮಿ',
+      opinion: 'ಡಿಗ್ರಿ ನಂತರ ಮುಂದೇನು ಎಂಬ ನನ್ನ ಪ್ರಶ್ನೆಗೆ MBA ಮತ್ತು ಸ್ಪರ್ಧಾತ್ಮಕ ಪರೀಕ್ಷೆ. ಸ್ಪರ್ಧಾತ್ಮಕ ಪರೀಕ್ಷೆಗೆ ತಯಾರಾಗಲು ಪ್ರಚೋದಿಸಿತು.',
+      photo: '/images/jane.jpg',
+    },
+    // Add other students...
   ];
 
-  const bgColors = ['bg-gradient-to-r from-blue-100 to-blue-300', 'bg-gradient-to-r from-green-100 to-green-300', 'bg-gradient-to-r from-purple-100 to-purple-300']; // Gradient backgrounds
+  const bgColors = [
+    'bg-gradient-to-r from-blue-100 to-blue-300',
+    'bg-gradient-to-r from-green-100 to-green-300',
+    'bg-gradient-to-r from-purple-100 to-purple-300',
+  ]; // Gradient backgrounds
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef(null);
 
@@ -67,11 +84,10 @@ const StudentOpinions = () => {
       <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
         What Our Students Say
       </h2>
-      <div className="relative overflow-hidden">
+      <div className="relative overflow-x-auto">
         <div
           ref={scrollRef}
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ width: '100%', overflowX: 'scroll' }}
+          className="flex transition-transform duration-500 ease-in-out space-x-6"
         >
           {students.map((student, index) => (
             <StudentOpinionCard
@@ -82,7 +98,6 @@ const StudentOpinions = () => {
           ))}
         </div>
       </div>
-      {/* Optional: Add dots or navigation */}
       <div className="flex justify-center mt-6">
         {students.map((_, index) => (
           <button
