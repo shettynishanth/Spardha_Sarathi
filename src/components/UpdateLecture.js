@@ -9,6 +9,7 @@ const UpdateLecture = () => {
   const [name, setName] = useState('');
   const [role, setRole] = useState('');
   const [qualification, setQualification] = useState(''); 
+  const [experience, setExperience] = useState(''); // New field for experience
   const [lectures, setLectures] = useState([]);
   const [uploading, setUploading] = useState(false);
   const [successMessage, setSuccessMessage] = useState('');
@@ -29,7 +30,7 @@ const UpdateLecture = () => {
 
   const handleUpload = async (e) => {
     e.preventDefault();
-    if (!image || !name || !role || !qualification) {  // qualification in validation
+    if (!image || !name || !role || !qualification || !experience) { // Include experience in validation
       alert('Please fill in all fields');
       return;
     }
@@ -44,7 +45,7 @@ const UpdateLecture = () => {
       const imageUrl = await getDownloadURL(imageRef);
 
       // Add lecture details to Firestore
-      const newLecture = { name, role, qualification, imageUrl }; 
+      const newLecture = { name, role, qualification, experience, imageUrl }; // Add experience to Firestore
       await addDoc(collection(db, 'lectures'), newLecture);
 
       // Update local state with the new lecture
@@ -54,7 +55,8 @@ const UpdateLecture = () => {
       setImage(null);
       setName('');
       setRole('');
-      setQualification('');  // Reset qualification field
+      setQualification('');
+      setExperience(''); // Reset experience field
       setSuccessMessage('Lecture uploaded successfully!');
     } catch (error) {
       console.error('Error uploading lecture:', error);
@@ -87,6 +89,7 @@ const UpdateLecture = () => {
         </div>
       )}
       <form onSubmit={handleUpload} className="space-y-4">
+        {/* Existing form fields */}
         <div>
           <label className="block text-sm font-medium text-gray-700">Lecture Image</label>
           <input
@@ -116,13 +119,23 @@ const UpdateLecture = () => {
             className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
           />
         </div>
-        <div> {/* New input field for qualification */}
+        <div>
           <label className="block text-sm font-medium text-gray-700">Qualification</label>
           <input
             type="text"
             placeholder="Enter qualification"
             value={qualification}
             onChange={(e) => setQualification(e.target.value)}
+            className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+          />
+        </div>
+        <div> {/* New Experience Input Field */}
+          <label className="block text-sm font-medium text-gray-700">Experience</label>
+          <input
+            type="text"
+            placeholder="Enter experience (e.g., 5 years)"
+            value={experience}
+            onChange={(e) => setExperience(e.target.value)}
             className="block w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
           />
         </div>
@@ -154,7 +167,8 @@ const UpdateLecture = () => {
                 <div className="flex-1">
                   <h3 className="text-lg font-semibold text-gray-800">{lecture.name}</h3>
                   <p className="text-gray-600">{lecture.role}</p>
-                  <p className="text-gray-500">{lecture.qualification}</p> {/* Display qualification */}
+                  <p className="text-gray-500">{lecture.qualification}</p>
+                  <p className="text-gray-500">{lecture.experience} years of experience</p> {/* Display experience */}
                 </div>
                 <button
                   onClick={() => handleRemove(lecture.id)}
