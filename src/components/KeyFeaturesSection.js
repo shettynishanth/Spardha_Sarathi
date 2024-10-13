@@ -28,11 +28,14 @@ const KeyFeaturesSection = () => {
   return (
     <section className="bg-gray-100 py-16">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-gray-800 text-center mb-12">
-          Why Choose Spardha Sarathi?
-          <br />
-          ಸ್ಪರ್ಧಾ ಸರಥಿಯನ್ನು ಯಾಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು
-        </h2>
+
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 text-center mb-6 sm:mb-12 leading-tight">
+  Why Choose Spardha Sarathi?
+  <br />
+  <span className="text-gray-600 text-lg sm:text-xl">ಸ್ಪರ್ಧಾ ಸರಥಿಯನ್ನು ಯಾಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು ?</span>
+</h2>
+
+
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <Feature
