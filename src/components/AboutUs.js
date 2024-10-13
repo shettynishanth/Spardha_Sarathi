@@ -7,9 +7,12 @@ const AboutUs = () => {
       {/* Main About Us Section */}
       <div className="max-w-7xl mx-auto p-10 pt-28">
         {/* Heading Section */}
-        <h1 className="text-3xl font-extrabold text-center text-gray-900 mb-6 tracking-tight uppercase">
-          Our Introduction
-        </h1>
+        <h1 className="text-2xl md:text-4xl font-extrabold text-center text-gray-900 mb-6 tracking-tight uppercase relative">
+  Our Introduction
+  <span className="custom-underline"></span>
+</h1>
+
+
         <h2 className="text-3xl font-semibold text-center text-blue-800 mb-4">
           Welcome to  Spardha Sarathi KAS Academy<br /> Kundapura
         </h2>
