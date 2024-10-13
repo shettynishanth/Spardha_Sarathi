@@ -80,10 +80,20 @@ const StudentOpinions = () => {
   }, [currentIndex]);
 
   return (
-    <div className="container mx-auto px-6 py-12">
-      <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">
-        What Our Students Say
-      </h2>
+    <div className="container mx-auto px-6 py-12"> 
+
+    
+<h2 className="text-3xl md:text-5xl font-extrabold text-center text-gray-800 mb-4">
+  <span className="highlight">What Our</span>Students Say
+  <span className="block text-gray-400 text-lg md:text-xl leading-snug mt-2">
+    Hear from our successful learners
+  </span>
+</h2>
+
+
+
+
+
       <div className="relative overflow-x-auto">
         <div
           ref={scrollRef}
