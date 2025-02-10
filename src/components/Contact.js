@@ -64,21 +64,6 @@ const ContactPage = () => {
           </div>
         </div>
 
-        {/* Contact Form */}
-      //   <div className="w-full lg:w-2/5 bg-white p-8 rounded-lg shadow-lg">
-      //     <h3 className="text-2xl font-bold mb-6 text-gray-900 text-center">
-      //       Send Us a Message
-      //     </h3>
-      //     <form className="space-y-4">
-      //       <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-lg" />
-      //       <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-lg" />
-      //       <textarea placeholder="Your Message" rows="5" className="w-full p-3 border rounded-lg"></textarea>
-      //       <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition">
-      //         Send Message
-      //       </button>
-      //     </form>
-      //   </div>
-      // </div>
 
       {/* Google Map Section */}
       <div className="mt-16 px-4 sm:px-8 md:px-16 lg:px-36 xl:px-48">
