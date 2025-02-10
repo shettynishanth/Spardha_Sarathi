@@ -27,14 +27,6 @@ const ImageSlider = () => {
     }
   }, [images]);
 
-  const goToPrevious = () => {
-    setCurrentIndex(prevIndex => (prevIndex - 1 + images.length) % images.length);
-  };
-
-  const goToNext = () => {
-    setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
-  };
-
   return (
     <div className="relative w-full h-screen overflow-hidden">
       {/* Image Slider */}
@@ -52,30 +44,15 @@ const ImageSlider = () => {
         ))}
       </div>
 
-      {/* Navigation Buttons */}
-      <button
-        onClick={goToPrevious}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full shadow-lg hover:bg-black/70 transition-all duration-300"
-      >
-        &#9664;
-      </button>
-      <button
-        onClick={goToNext}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full shadow-lg hover:bg-black/70 transition-all duration-300"
-      >
-        &#9654;
-      </button>
-
       {/* Slide Indicators */}
       <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3">
         {images.map((_, index) => (
-          <button
+          <div
             key={index}
             className={`w-4 h-4 rounded-full transition-all duration-300 ${
               index === currentIndex ? 'bg-white scale-125' : 'bg-gray-400'
             }`}
-            onClick={() => setCurrentIndex(index)}
-          ></button>
+          ></div>
         ))}
       </div>
     </div>
