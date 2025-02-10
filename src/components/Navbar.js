@@ -61,6 +61,8 @@ const Navbar = () => {
           className="text-green-500 hover:text-green-400 transition duration-300">
           <FaWhatsapp size={22} />
             </a>
+
+
             
           </div>
         </div>
@@ -125,7 +127,16 @@ const Navbar = () => {
               className="text-pink-500 hover:text-pink-400 transition duration-300"
             >
               <FaInstagram size={28} />
+                
             </a>
+
+                <a
+  href="https://wa.me/7019130402"
+  className="text-green-500 hover:text-green-400 transition duration-300"
+>
+  <FaWhatsapp size={28} />
+</a>
+
           </div>
         </div>
       </div>
