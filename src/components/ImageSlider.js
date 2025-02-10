@@ -21,9 +21,9 @@ const ImageSlider = () => {
     if (images.length > 0) {
       const intervalId = setInterval(() => {
         setCurrentIndex(prevIndex => (prevIndex + 1) % images.length);
-      }, 4000); // Change image every 4 seconds for a smoother experience
+      }, 4000);
 
-      return () => clearInterval(intervalId); // Clear interval on component unmount
+      return () => clearInterval(intervalId);
     }
   }, [images]);
 
@@ -36,56 +36,47 @@ const ImageSlider = () => {
   };
 
   return (
-    <div className="w-full max-w-screen-lg mx-auto p-8">
-      {/* Heading */}
-      <h2 className="text-4xl font-bold text-center mb-2">News & Updates</h2>
-      <p className="text-xl text-center mb-6">Upcoming Batches & Updates</p>
-
+    <div className="relative w-full h-screen overflow-hidden">
       {/* Image Slider */}
-      <div className="relative w-full overflow-hidden rounded-lg shadow-lg">
-        {/* Image container */}
-        <div
-          className="flex transition-transform duration-700 ease-in-out"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {images.map((url, index) => (
-            <img
-              key={index}
-              src={url}
-              alt={`Slide ${index}`}
-              className="w-full object-cover h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]" 
-            />
-          ))}
-        </div>
+      <div
+        className="absolute inset-0 flex transition-transform duration-700 ease-in-out"
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {images.map((url, index) => (
+          <img
+            key={index}
+            src={url}
+            alt={`Slide ${index}`}
+            className="w-full h-screen object-cover"
+          />
+        ))}
+      </div>
 
-        {/* Previous and Next buttons */}
-        <div className="absolute inset-0 flex items-center justify-between px-4">
-          <button
-            onClick={goToPrevious}
-            className="bg-black/60 text-white p-2 rounded-full shadow-lg hover:bg-black/80 transition-all duration-300"
-          >
-            &#9664;
-          </button>
-          <button
-            onClick={goToNext}
-            className="bg-black/60 text-white p-2 rounded-full shadow-lg hover:bg-black/80 transition-all duration-300"
-          >
-            &#9654;
-          </button>
-        </div>
+      {/* Navigation Buttons */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full shadow-lg hover:bg-black/70 transition-all duration-300"
+      >
+        &#9664;
+      </button>
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-3 rounded-full shadow-lg hover:bg-black/70 transition-all duration-300"
+      >
+        &#9654;
+      </button>
 
-        {/* Slide indicators */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {images.map((_, index) => (
-            <button
-              key={index}
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? 'bg-white' : 'bg-gray-300'
-              }`}
-              onClick={() => setCurrentIndex(index)}
-            ></button>
-          ))}
-        </div>
+      {/* Slide Indicators */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-3">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            className={`w-4 h-4 rounded-full transition-all duration-300 ${
+              index === currentIndex ? 'bg-white scale-125' : 'bg-gray-400'
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          ></button>
+        ))}
       </div>
     </div>
   );
