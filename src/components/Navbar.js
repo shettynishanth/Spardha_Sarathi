@@ -49,18 +49,18 @@ const Navbar = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4">
-            <a
-              href="https://youtu.be/sde1vh0M0nw?si=fO4oVzK4eBU12Xzn"
-              className="text-red-600 hover:text-red-500 transition duration-300"
-            >
-              <FaYoutube size={22} />
-            </a>
+            // <a
+            //   href="https://youtu.be/sde1vh0M0nw?si=fO4oVzK4eBU12Xzn"
+            //   className="text-red-600 hover:text-red-500 transition duration-300"
+            // >
+            //   <FaYoutube size={22} />
+            // </a>
 
-                <a 
-                href="https://www.instagram.com/spardha_sarathi_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                className="text-red-600 hover:text-red-500 transition duration-300">
-                  <FaInstagram size={22} />
-                  </a>
+            //     <a 
+            //     href="https://www.instagram.com/spardha_sarathi_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            //     className="text-red-600 hover:text-red-500 transition duration-300">
+            //       <FaInstagram size={22} />
+            //       </a>
                   
     
             <a
