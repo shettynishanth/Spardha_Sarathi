@@ -40,10 +40,11 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
+            <ImageSlider />
               <MovingText />
               <HeroSection />
               <AboutSection />
-              <ImageSlider />
+              
               
               <KeyFeaturesSection />
               <StudentOpinions />
