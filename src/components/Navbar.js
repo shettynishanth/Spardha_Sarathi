@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaYoutube, FaInstagram, FaBars, FaTimes } from "react-icons/fa";
+import { FaYoutube, FaInstagram, FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,28 +49,29 @@ const Navbar = () => {
 
           {/* Social Icons */}
           <div className="flex space-x-4">
-            // <a
-            //   href="https://youtu.be/sde1vh0M0nw?si=fO4oVzK4eBU12Xzn"
-            //   className="text-red-600 hover:text-red-500 transition duration-300"
-            // >
-            //   <FaYoutube size={22} />
-            // </a>
-
-            //     <a 
-            //     href="https://www.instagram.com/spardha_sarathi_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-            //     className="text-red-600 hover:text-red-500 transition duration-300">
-            //       <FaInstagram size={22} />
-            //       </a>
-                  
-    
+            {/* YouTube */}
             <a
-          href="https://wa.me/7019130402" 
-          className="text-green-500 hover:text-green-400 transition duration-300">
-          <FaWhatsapp size={22} />
+              href="https://youtu.be/sde1vh0M0nw?si=fO4oVzK4eBU12Xzn"
+              className="text-red-600 hover:text-red-500 transition duration-300"
+            >
+              <FaYoutube size={22} />
             </a>
 
+            {/* Instagram */}
+            <a
+              href="https://www.instagram.com/spardha_sarathi_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              className="text-pink-500 hover:text-pink-400 transition duration-300"
+            >
+              <FaInstagram size={22} />
+            </a>
 
-            
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/7019130402"
+              className="text-green-500 hover:text-green-400 transition duration-300"
+            >
+              <FaWhatsapp size={22} />
+            </a>
           </div>
         </div>
 
@@ -134,15 +135,13 @@ const Navbar = () => {
               className="text-pink-500 hover:text-pink-400 transition duration-300"
             >
               <FaInstagram size={28} />
-                
             </a>
-
-                <a
-                href="https://wa.me/7019130402"
-                className="text-green-500 hover:text-green-400 transition duration-300">
-                <FaWhatsapp size={28} />
-                </a>
-
+            <a
+              href="https://wa.me/7019130402"
+              className="text-green-500 hover:text-green-400 transition duration-300"
+            >
+              <FaWhatsapp size={28} />
+            </a>
           </div>
         </div>
       </div>
