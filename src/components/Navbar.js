@@ -131,11 +131,10 @@ const Navbar = () => {
             </a>
 
                 <a
-  href="https://wa.me/7019130402"
-  className="text-green-500 hover:text-green-400 transition duration-300"
->
-  <FaWhatsapp size={28} />
-</a>
+                href="https://wa.me/7019130402"
+                className="text-green-500 hover:text-green-400 transition duration-300">
+                <FaWhatsapp size={28} />
+                </a>
 
           </div>
         </div>
