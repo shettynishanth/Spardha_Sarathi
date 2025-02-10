@@ -55,7 +55,14 @@ const Navbar = () => {
             >
               <FaYoutube size={22} />
             </a>
-                
+
+                <a 
+                href="https://www.instagram.com/spardha_sarathi_academy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                className="text-red-600 hover:text-red-500 transition duration-300">
+                  <FaInstagram size={22} />
+                  </a>
+                  
+    
             <a
           href="https://wa.me/7019130402" 
           className="text-green-500 hover:text-green-400 transition duration-300">
