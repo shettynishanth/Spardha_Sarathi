@@ -20,6 +20,7 @@ import YouTubeChannelPromo from "./components/YouTubeChannelPromo";
 import LectureProfiles from "./components/LectureProfiles";
 import GalleryPage from "./components/GalleryPage";
 import MovingText from "./components/MovingText";
+import AdmissionsPage from "./components/AdmissionsPage";
 
 // import FeedbackButton from "./components/feedback";
 
@@ -40,8 +41,8 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
-            
-              <MovingText />
+            <AdmissionsPage/>
+              // <MovingText />
               <HeroSection />
             <ImageSlider />
               <AboutSection />
