@@ -21,6 +21,10 @@ import LectureProfiles from "./components/LectureProfiles";
 import GalleryPage from "./components/GalleryPage";
 import MovingText from "./components/MovingText";
 import AdmissionsPage from "./components/AdmissionsPage";
+// import CollaborationSection from "./components/CollaborationSection";
+import CourseList from "./components/CourseList";
+
+import EventsPage from "./components/EventsPage";
 
 // import FeedbackButton from "./components/feedback";
 
@@ -41,20 +45,28 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
-            <AdmissionsPage/>
-              // <MovingText />
+              {/* <MovingText /> */}
+              <AdmissionsPage/>
               <HeroSection />
-            <ImageSlider />
-              <AboutSection />
-              
-              
+              {/* <AboutSection /> */}
+              <ImageSlider />
+
+              <CourseList/>
+              {/* <CollaborationSection/> */}
+              {/* <PleasedDisplay /> */}
               <KeyFeaturesSection />
+              {/* <LectureProfiles /> */}
               <StudentOpinions />
               <YouTubeChannelPromo />
+
+
+                <EventsPage/>
+
               <CounsellingSection />
               <StudentForm />
               <Footer />
 
+              {/* <FeedbackButton/> */}
             </>
           }
         />
