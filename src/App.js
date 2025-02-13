@@ -6,6 +6,7 @@ import StudentForm from "./components/StudentForm";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
+
 import ImageSlider from "./components/ImageSlider";
 // import PleasedDisplay from "./components/PleasedDisplay";
 import KeyFeaturesSection from "./components/KeyFeaturesSection";
