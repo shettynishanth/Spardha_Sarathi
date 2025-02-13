@@ -11,14 +11,8 @@ const useOnScreen = (options) => {
       ([entry]) => setIntersecting(entry.isIntersecting),
       options
     );
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.unobserve(ref.current);
   }, [ref, options]);
 
   return [ref, isIntersecting];
@@ -26,24 +20,26 @@ const useOnScreen = (options) => {
 
 const KeyFeaturesSection = () => {
   return (
-    <section className="bg-gray-100 py-16">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-6">
+        {/* Title Section */}
+        <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 text-center mb-12">
+          Why Choose <span className="text-blue-600">Spardha Sarathi?</span>
+          <br />
+          <span className="text-gray-600 text-xl sm:text-2xl">
+            ಸ್ಪರ್ಧಾ ಸರಥಿಯನ್ನು ಯಾಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು ?
+          </span>
+        </h2>
 
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-800 text-center mb-6 sm:mb-12 leading-tight">
-  Why Choose Spardha Sarathi?
-  <br />
-  <span className="text-gray-600 text-lg sm:text-xl">ಸ್ಪರ್ಧಾ ಸರಥಿಯನ್ನು ಯಾಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು ?</span>
-</h2>
-
-
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {/* Features Grid */}
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {features.map((feature, index) => (
             <Feature
               key={index}
               icon={feature.icon}
               title={feature.title}
               description={feature.description}
-              delay={index * 300} // Adding delay for staggered effect
+              delay={index * 200}
             />
           ))}
         </div>
@@ -58,47 +54,53 @@ const Feature = ({ icon, title, description, delay }) => {
   return (
     <div
       ref={ref}
-      className={`text-center transform transition-transform duration-700 ease-out ${
+      className={`relative p-8 bg-white border border-gray-200 rounded-xl shadow-md text-center transform transition-all duration-700 ease-out ${
         visible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-      }`}
+      } hover:shadow-lg hover:-translate-y-2`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <img src={icon} alt={title} className="mx-auto h-48 w-48 rounded-full" />
+      {/* Icon */}
+      <div className="relative mx-auto w-24 h-24 overflow-hidden rounded-full border-4 border-blue-500 shadow-lg">
+        <img src={icon} alt={title} className="w-full h-full object-cover" />
+      </div>
+
+      {/* Title */}
       <h3 className="mt-6 text-2xl font-semibold text-gray-800">{title}</h3>
-      <p className="mt-4 text-gray-600 text-lg">{description}</p>
+
+      {/* Description */}
+      <p className="mt-4 text-gray-600 text-lg leading-relaxed">{description}</p>
+
+      {/* Hover Glow Effect */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-transparent opacity-0 hover:opacity-40 transition-opacity duration-500 rounded-xl"></div>
     </div>
   );
 };
 
-// Feature data
+// Features Data
 const features = [
   {
     icon: "/two-happy.jpg",
     title: "Personalized Coaching",
     description:
-      "Tailored coaching that adapts to your learning needs, guiding you to overcome challenges and reach your academic goals. " +
-      "ನಿಮ್ಮ ಕಲಿಕೆಯ ಅಗತ್ಯಗಳಿಗೆ ಅನುಗುಣವಾಗಿ ರೂಪಿತ ತರಬೇತಿ, ನೀವು ಸವಾಲುಗಳನ್ನು ದೂರ ಮಾಡುವುದು ಮತ್ತು ನಿಮ್ಮ ಶ್ರೇಣೀಗೋಲುಗಳನ್ನು ಸಾಧಿಸಲು ಮಾರ್ಗದರ್ಶನ ಮಾಡುವುದು.",
+      "Tailored coaching adapts to your learning needs, guiding you to overcome challenges and achieve your academic goals.",
   },
   {
     icon: "/yoga.jpg",
     title: "Meditation with Learning",
     description:
-      "Incorporate mindfulness and meditation practices into your learning journey to enhance focus, reduce stress, and improve overall academic performance. " +
-      "ನೀವು ನಿಮ್ಮ ಕಲಿಕೆಯ ಪ್ರಯಾಣದಲ್ಲಿ ಸಮಾನ ಸಹಪಾಠಿಗಳೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲು, ವಿಚಾರಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಮತ್ತು ಪ್ರೋತ್ಸಾಹವನ್ನು ಸ್ವೀಕರಿಸಲು ಶಕ್ತಿಯುತ ಮತ್ತು ಬೆಂಬಲದ ಸಮುದಾಯದಲ್ಲಿ ಸೇರಿ.",
+      "Enhance focus, reduce stress, and improve academic performance by integrating mindfulness into your studies.",
   },
   {
     icon: "/portrait-teacher.jpg",
     title: "Experienced Teaching Staff",
     description:
-      "Learn from a distinguished team of IAS professionals from Bangalore and Dharwad, bringing a wealth of knowledge and real-world experience to guide your success. " +
-      "ನಿಮ್ಮ ಯಶಸ್ಸಿಗೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಲು ನಿಜವಾದ ಜ್ಞಾನ ಮತ್ತು ಅನುಭವವನ್ನು ತರುವ ಬಂಗಳೂರು ಮತ್ತು ಧಾರವಾಡದಿಂದ ಬರುವ IAS ವೃತ್ತಿಪರರ ಘನತಾಪೂರ್ವಕ ತಂಡದಿಂದ ಕಲಿಯಿರಿ.",
+      "Learn from IAS professionals from Bangalore and Dharwad, bringing real-world expertise to help you succeed.",
   },
   {
     icon: "/happy-partnershp.jpg",
     title: "Community Support",
     description:
-      "Join a vibrant and supportive community where you can connect with peers, share insights, and receive encouragement throughout your learning journey. " +
-      "ನೀವು ನಿಮ್ಮ ಕಲಿಕೆಯ ಪ್ರಯಾಣದಲ್ಲಿ ಸಮಾನ ಸಹಪಾಠಿಗಳೊಂದಿಗೆ ಸಂಪರ್ಕ ಸಾಧಿಸಲು, ವಿಚಾರಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಲು ಮತ್ತು ಪ್ರೋತ್ಸಾಹವನ್ನು ಸ್ವೀಕರಿಸಲು ಶಕ್ತಿಯುತ ಮತ್ತು ಬೆಂಬಲದ ಸಮುದಾಯದಲ್ಲಿ ಸೇರಿ.",
+      "Join a supportive learning community, connect with peers, share insights, and receive encouragement.",
   },
 ];
 
