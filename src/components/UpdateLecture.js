@@ -3,7 +3,6 @@ import { storage, db } from "../firebase";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import { FaTrash, FaEdit, FaSave } from "react-icons/fa";
-import { useDropzone } from "react-dropzone";
 
 const UpdateLecture = () => {
   const [image, setImage] = useState(null);
@@ -69,18 +68,10 @@ const UpdateLecture = () => {
     setEditingId(null);
   };
 
-  const { getRootProps, getInputProps } = useDropzone({
-    accept: "image/*",
-    onDrop: (acceptedFiles) => setImage(acceptedFiles[0]),
-  });
-
   return (
     <div className="p-8 max-w-4xl mx-auto bg-gray-100 rounded-xl shadow-lg space-y-6">
       <h1 className="text-3xl font-semibold text-center text-gray-800">Manage Lectures</h1>
-      <div {...getRootProps()} className="border-2 border-dashed p-6 rounded-lg cursor-pointer bg-white text-center">
-        <input {...getInputProps()} />
-        <p>Drag & Drop an image or click to select</p>
-      </div>
+      <input type="file" onChange={(e) => setImage(e.target.files[0])} className="w-full p-2 border rounded" />
       <input type="text" placeholder="Search Lectures" className="w-full p-2 border rounded" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
       <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full p-2 border rounded" />
       <input type="text" placeholder="Role" value={role} onChange={(e) => setRole(e.target.value)} className="w-full p-2 border rounded" />
