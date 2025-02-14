@@ -5,7 +5,7 @@ import "./App.css";
 import StudentForm from "./components/StudentForm";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
+// import AboutSection from "./components/AboutSection";
 
 import ImageSlider from "./components/ImageSlider";
 // import PleasedDisplay from "./components/PleasedDisplay";
@@ -20,7 +20,7 @@ import CounsellingSection from "./components/CounsellingSection";
 import YouTubeChannelPromo from "./components/YouTubeChannelPromo";
 import LectureProfiles from "./components/LectureProfiles";
 import GalleryPage from "./components/GalleryPage";
-import MovingText from "./components/MovingText";
+// import MovingText from "./components/MovingText";
 import AdmissionsPage from "./components/AdmissionsPage";
 // import CollaborationSection from "./components/CollaborationSection";
 import CourseList from "./components/CourseList";
@@ -63,7 +63,7 @@ function App() {
 
                 <EventsPage/>
 
-              <CounsellingSection />
+              {/* <CounsellingSection /> */}
               <StudentForm />
               <Footer />
 
