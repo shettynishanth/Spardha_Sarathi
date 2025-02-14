@@ -2,32 +2,26 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import "./App.css";
-import StudentForm from "./components/StudentForm";
+
+// Components
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-// import AboutSection from "./components/AboutSection";
-
 import ImageSlider from "./components/ImageSlider";
-// import PleasedDisplay from "./components/PleasedDisplay";
 import KeyFeaturesSection from "./components/KeyFeaturesSection";
+import StudentOpinions from "./components/StudentOpinionCard";
+import YouTubeChannelPromo from "./components/YouTubeChannelPromo";
+import StudentForm from "./components/StudentForm";
 import Footer from "./components/Footer";
 import AdminLogin from "./components/AdminLogin";
 import Dashboard from "./components/Dashboard";
 import AboutUs from "./components/AboutUs";
-import StudentOpinions from "./components/StudentOpinionCard";
 import ContactPage from "./components/Contact";
 import CounsellingSection from "./components/CounsellingSection";
-import YouTubeChannelPromo from "./components/YouTubeChannelPromo";
 import LectureProfiles from "./components/LectureProfiles";
 import GalleryPage from "./components/GalleryPage";
-// import MovingText from "./components/MovingText";
 import AdmissionsPage from "./components/AdmissionsPage";
-// import CollaborationSection from "./components/CollaborationSection";
 import CourseList from "./components/CourseList";
-
 import EventsPage from "./components/EventsPage";
-
-// import FeedbackButton from "./components/feedback";
 
 function App() {
   return (
@@ -38,6 +32,7 @@ function App() {
       </Helmet>
 
       <Routes>
+        {/* Home Page */}
         <Route
           path="/"
           element={
@@ -46,30 +41,21 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
-              <AdmissionsPage/>
+              <AdmissionsPage />
               <HeroSection />
-              {/* <AboutSection /> */}
               <ImageSlider />
-
-              <CourseList/>
-              {/* <CollaborationSection/> */}
-              {/* <PleasedDisplay /> */}
+              <CourseList />
               <KeyFeaturesSection />
-              {/* <LectureProfiles /> */}
               <StudentOpinions />
               <YouTubeChannelPromo />
-
-
-                <EventsPage/>
-
-              {/* <CounsellingSection /> */}
+              <EventsPage />
               <StudentForm />
               <Footer />
-
-              {/* <FeedbackButton/> */}
             </>
           }
         />
+
+        {/* Admin Login */}
         <Route
           path="/AdminLogin"
           element={
@@ -81,6 +67,8 @@ function App() {
             </>
           }
         />
+
+        {/* Admin Dashboard */}
         <Route
           path="/Dashboard"
           element={
@@ -92,6 +80,8 @@ function App() {
             </>
           }
         />
+
+        {/* About Us Page */}
         <Route
           path="/AboutUs"
           element={
@@ -108,6 +98,8 @@ function App() {
             </>
           }
         />
+
+        {/* Contact Page */}
         <Route
           path="/Contact"
           element={
@@ -123,6 +115,8 @@ function App() {
             </>
           }
         />
+
+        {/* Gallery Page */}
         <Route
           path="/GalleryPage"
           element={
@@ -138,15 +132,12 @@ function App() {
             </>
           }
         />
-<Route 
-path="/CounsellingSection"
-element={
-  <>
-  <CounsellingSection />
-  </>
-}
-/>
 
+        {/* Counselling Section */}
+        <Route
+          path="/CounsellingSection"
+          element={<CounsellingSection />}
+        />
       </Routes>
     </>
   );
