@@ -46,7 +46,6 @@ function App() {
                 <title>Home | Spardha Sarathi Academy</title>
               </Helmet>
               <Navbar />
-              {/* <MovingText /> */}
               <AdmissionsPage/>
               <HeroSection />
               {/* <AboutSection /> */}
