@@ -2,7 +2,7 @@ import React from "react";
 
 const AdmissionsPage = () => {
   return (
-    <div className="relative w-full min-h-[60vh] md:min-h-screen flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 text-black px-6 md:px-36 pt-16 md:pt-16 overflow-hidden">
+    <div className="relative w-full min-h-[60vh] md:min-h-screen flex flex-col md:flex-row items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 text-black px-6 md:px-36 pt-24 md:pt-16 overflow-hidden">
       {/* Left Section (Text) */}
       <div className="w-full md:w-1/2 text-center md:text-left px-4 md:px-12 space-y-4 md:space-y-6 relative z-10">
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-blue-900 leading-tight animate-fade-in">
