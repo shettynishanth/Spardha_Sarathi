@@ -50,7 +50,7 @@ const YouTubeChannelPromo = () => {
 
         {/* Video Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {["dQw4w9WgXcQ", "9bZkp7q19f0", "tgbNymZ7vqY"].map((videoId) => (
+          {["nfP_VPb5G5A", "yNnBASSkHok", "sde1vh0M0nw"].map((videoId) => (
             <div
               key={videoId}
               className="relative group transform transition-all duration-300 hover:scale-105 rounded-xl overflow-hidden shadow-lg"
@@ -85,15 +85,13 @@ const YouTubeChannelPromo = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-6 md:px-12">
           {/* Left Side: Image */}
           <div className="md:w-1/2 flex justify-center items-center">
-          <img
-  src="/image.png" // Replace with actual image path
-  alt="Student"
-  className="w-[90px] md:w-[150px] lg:w-[180px] xl:w-[225px] object-contain drop-shadow-lg"
-/>
-
+            <img
+              src="/image.png" // Replace with actual image path
+              alt="Student"
+              className="w-[90px] md:w-[150px] lg:w-[180px] xl:w-[225px] object-contain drop-shadow-lg"
+            />
           </div>
 
-          {/* Right Side: Button */}
           {/* Right Side: Contact Details */}
           <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
