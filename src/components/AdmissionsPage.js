@@ -31,7 +31,7 @@ const AdmissionsPage = () => {
 
         {/* Apply Button */}
         <motion.a
-          href="/StudentForm"
+          href="/Contact"
           variants={textVariants}
           initial="hidden"
           animate="visible"
