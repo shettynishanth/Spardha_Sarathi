@@ -232,4 +232,52 @@ body {
   width: 200px; /* Increase width on hover */
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
+.image-slide {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Optional: Add a hover effect on images */
+.image-slide:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+.nav-link {
+  @apply text-gray-800 font-medium hover:text-blue-600 transition duration-300 px-3 py-2;
+}
+
+.dropdown-link {
+  @apply block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600;
+}
+
+.mobile-nav-link {
+  @apply text-gray-800 text-lg font-medium py-3 px-4 hover:bg-gray-100 rounded-lg;
+}
+
+.mobile-sub-link {
+  @apply block py-2 px-6 text-gray-600 hover:bg-gray-100 rounded-lg text-base;
+}
+
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
