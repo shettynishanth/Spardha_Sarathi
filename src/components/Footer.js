@@ -1,99 +1,216 @@
 import React from "react";
-import { FaEnvelope, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaEnvelope, FaInstagram, FaYoutube, FaArrowUp } from "react-icons/fa";
+import { motion } from "framer-motion";
+import {  FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
-    <footer className="bg-gray-900 text-gray-300 px-6 py-10 md:px-16 md:py-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* About Us Section */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">About Us</h3>
-          <p className="text-sm leading-relaxed">
-            We are a premier institute dedicated to coaching students for
-            competitive exams at both state and national levels, nurturing success and excellence.
-          </p>
-        </div>
-
-        {/* Address Section */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Address</h3>
-          <p className="text-sm leading-relaxed">
-            Spardha Sarathi KAS Academy
-            <br />
-            196-5, 6th ward, Kundapura Main Rd, Old Bustand,
-            <br />
-            near Municipality, Kundapura, Karnataka 576201
-          </p>
-        </div>
-
-        {/* Contact Section */}
-        <div>
-          <h3 className="text-lg font-semibold text-white mb-3">Contact</h3>
-          <p className="text-sm leading-relaxed">
-            <strong>Phone:</strong> +91 7019130402, +91 9448302476
-            <br />
-            <strong>Email:</strong>
-            <a
-              href="mailto:spardhasarathiacademy@gmail.com"
-              className="text-blue-400 hover:text-blue-300 ml-1"
-            >
-              spardhasarathiacademy@gmail.com
-            </a>
-          </p>
-        </div>
-
-        {/* Social Media Links */}
-        <div className="text-center md:text-left">
-          <h3 className="text-lg font-semibold text-white mb-3">Follow Us</h3>
-          <div className="flex justify-center md:justify-start space-x-6">
-            <a
-              href="https://youtu.be/sde1vh0M0nw?si=fO4oVzK4eBU12Xzn"
-              className="text-red-600 hover:text-red-500"
-              aria-label="YouTube"
-            >
-              <FaYoutube size={24} />
-            </a>
-            <a
-              href="https://www.instagram.com/spardha_sarathi_academy"
-              className="text-pink-500 hover:text-pink-400"
-              aria-label="Instagram"
-            >
-              <FaInstagram size={24} />
-            </a>
-          </div>
-        </div>
+    <footer className="relative bg-gradient-to-b from-gray-900 to-gray-800 text-gray-300 pt-20 pb-12 px-6 md:px-16">
+      {/* Wave Shape Divider */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden transform -translate-y-1">
+        <svg viewBox="0 0 1440 150" className="w-full h-24">
+          <path fill="currentColor" 
+                d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" 
+                className="text-gray-900"></path>
+        </svg>
       </div>
 
-      {/* Footer Bottom Section */}
-      <div className="text-center py-6 border-t border-gray-800 mt-8">
-        <p className="text-sm">© 2024 Spardha Sarathi KAS Academy. All rights reserved.</p>
-        
-        {/* Developer Information */}
-        <div className="mt-4 flex justify-center items-center space-x-3">
-          <span className="text-sm">Developed By:</span>
-          <a
-            href="/AdminLogin"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-400 hover:text-blue-300"
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          {/* About Us Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center md:text-left"
           >
-            Nishanth Shetty
-          </a>
-          <a
-            href="https://www.instagram.com/shetty_nishanth08"
-            className="text-pink-500 hover:text-pink-400"
-            aria-label="Instagram"
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center justify-center md:justify-start">
+        <span className="text-white">About Us</span>
+      </h3>
+            <p className="text-sm leading-relaxed mb-4">
+              Premier institute dedicated to coaching students for competitive exams at state and national levels.
+            </p>
+            <div className="flex space-x-4 justify-center md:justify-start">
+              <img 
+                src="/path-to-awards-badge.png" 
+                alt="Award Badge" 
+                className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+              <img 
+                src="/path-to-certification.png" 
+                alt="Certification" 
+                className="h-12 w-auto opacity-80 hover:opacity-100 transition-opacity"
+              />
+            </div>
+          </motion.div>
+
+          {/* Address Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center"
           >
-            <FaInstagram size={20} />
-          </a>
-          <a
-            href="mailto:shettynishanth100@gmail.com"
-            className="text-blue-400 hover:text-blue-300"
-            aria-label="Email"
+            <h3 className="text-xl font-bold text-white mb-4">
+        <span className="text-white">Our Campus</span>
+      </h3>
+            <div className="relative group">
+              <div className="text-sm leading-relaxed space-y-2">
+                <p>196-5, 6th ward,</p>
+                <p>Kundapura Main Rd,</p>
+                <p>Old Bustand, near Municipality</p>
+                <p>Kundapura, Karnataka 576201</p>
+              </div>
+              <a 
+                href="https://maps.app.goo.gl/your-google-maps-link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center text-blue-400 hover:text-blue-300 text-sm"
+              >
+                View on Map →
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Contact Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-center"
           >
-            <FaEnvelope size={20} />
-          </a>
+            <h3 className="text-xl font-bold text-white mb-4">
+        <span className="text-white">Connect</span>
+      </h3>
+            <div className="space-y-2 text-sm">
+              <div className="hover:bg-gray-800 rounded-lg p-2 transition-colors">
+                <a href="tel:+917019130402" className="flex items-center justify-center gap-2">
+                  <span>+91 7019130402</span>
+                </a>
+              </div>
+              <div className="hover:bg-gray-800 rounded-lg p-2 transition-colors">
+                <a href="tel:+919448302476" className="flex items-center justify-center gap-2">
+                  <span>+91 9448302476</span>
+                </a>
+              </div>
+              <div className="hover:bg-gray-800 rounded-lg p-2 transition-colors">
+                <a href="mailto:spardhasarathi@gmail.com" className="flex items-center justify-center gap-2">
+                  <FaEnvelope className="flex-shrink-0" />
+                  <span>spardhasarathi@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Social Media Section */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-center"
+          >
+            <h3 className="text-xl font-bold text-white mb-4">
+        <span className="text-white">Follow Us</span>
+      </h3>
+            <div className="flex justify-center space-x-6">
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="https://youtu.be/sde1vh0M0nw?si=fO4oVzK4eBU12Xzn"
+                className="text-red-600 hover:text-red-500 bg-white rounded-full p-2 shadow-lg"
+              >
+                <FaYoutube size={28} />
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1 }}
+                href="https://www.instagram.com/spardha_sarathi_academy"
+                className="text-pink-500 hover:text-pink-400 bg-white rounded-full p-2 shadow-lg"
+              >
+                <FaInstagram size={28} />
+              </motion.a>
+            </div>
+          </motion.div>
         </div>
+
+        {/* Copyright Section */}
+        <div className="border-t border-gray-800 pt-8 text-center">
+          <div className="mb-4">
+            <p className="text-sm">
+              © 2024 Spardha Sarathi KAS Academy. All rights reserved.
+            </p>
+          </div>
+
+          {/* Developer Info */}
+<div className="flex flex-col items-center justify-center p-4 bg-white/5 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 space-y-3 md:space-y-0 md:flex-row md:space-x-6">
+  <div className="flex items-center space-x-2 group">
+        <span className="text-sm font-medium text-gray-400">Crafted with</span>
+    <div className="animate-pulse">❤️</div> 
+    <span className="text-sm font-medium text-gray-400">by</span>
+  </div>
+
+  <div className="flex items-center space-x-4">
+    <div className="flex items-center space-x-3">
+      <a
+        href="/AdminLogin"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group relative text-lg font-semibold hover:text-white transition-colors duration-200"
+      >
+        
+        <span className="ml-2 px-2 py-1 text-xs rounded-full bg-blue-400/20 text-blue-300 group-hover:bg-blue-400/30 transition-colors duration-200">
+          Admin
+        </span>
+        <span className="absolute -right-4 top-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+          ↗
+        </span>
+      </a>
+    </div>
+    
+    <div className="flex space-x-3">
+      <a
+        href="mailto:shettynishanth100@gmail.com"
+        className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+        title="Email"
+      >
+        <FaEnvelope className="text-blue-400 w-5 h-5 hover:text-blue-300" />
+      </a>
+      <a
+        href="https://github.com/yourprofile"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+        title="GitHub"
+      >
+        <FaGithub className="text-purple-400 w-5 h-5 hover:text-purple-300" />
+      </a>
+      <a
+        href="https://linkedin.com/in/yourprofile"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
+        title="LinkedIn"
+      >
+        <FaLinkedin className="text-cyan-400 w-5 h-5 hover:text-cyan-300" />
+      </a>
+    </div>
+  </div>
+</div>
+        </div>
+
+        {/* Back to Top Button */}
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-gradient-to-br from-blue-400 to-green-400 text-white p-3 rounded-full shadow-xl z-50"
+        >
+          <FaArrowUp size={24} />
+        </motion.button>
       </div>
     </footer>
   );
