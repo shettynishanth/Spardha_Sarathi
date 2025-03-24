@@ -20,9 +20,9 @@ const FoundersVision = () => {
           />
         </div>
         <h1 className="mt-6 text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-          Dr. Ravi Sharma
+          Adarsh Kela
         </h1>
-        <p className="text-xl text-gray-600 mt-2">Founder & CEO</p>
+        <p className="text-xl text-gray-600 mt-2">Founder</p>
       </motion.div>
 
       {/* Vision Statement */}
