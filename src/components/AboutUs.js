@@ -1,22 +1,54 @@
 import React from "react";
-import { 
-  FaChalkboardTeacher, FaBookReader, FaLightbulb, FaUsers, 
-  FaBrain, FaGlobe, FaUserGraduate, FaCalendarCheck, FaHeartbeat 
+import {
+  FaChalkboardTeacher,
+  FaBookReader,
+  FaLightbulb,
+  FaUsers,
+  FaBrain,
+  FaGlobe,
+  FaUserGraduate,
+  FaCalendarCheck,
+  FaHeartbeat,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+import { useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { useEffect, useRef } from 'react';
+
+const AnimatedNumber = ({ value }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, Math.round);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, value, {
+        duration: 2,
+        ease: "easeOut"
+      });
+      return controls.stop;
+    }
+  }, [count, value, isInView]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+};
+
 const AboutUs = () => {
+  const milestonesRef = useRef(null);
+  const isMilestonesInView = useInView(milestonesRef, { margin: "-100px 0px" });
   return (
-     <div className="pt-16 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50 min-h-screen">
+    
+    <div className="pt-16 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50 min-h-screen">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
-        <motion.div 
+        <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2 }}
           className="absolute top-20 -left-20 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         />
-        <motion.div 
+        <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 2, delay: 0.2 }}
@@ -26,7 +58,7 @@ const AboutUs = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
         {/* Enhanced Heading Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-20 space-y-6"
@@ -37,13 +69,15 @@ const AboutUs = () => {
               ಸ್ಪರ್ಧಾ ಸಾರಥಿ
             </h1>
           </div>
-          <motion.p 
+          
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
             className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto leading-relaxed pt-1"
           >
-            Empowering aspirants with revolutionary guidance to conquer KAS & UPSC examinations
+            Empowering aspirants with revolutionary guidance to conquer KAS &
+            UPSC examinations
           </motion.p>
         </motion.div>
 
@@ -65,15 +99,21 @@ const AboutUs = () => {
               <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
                 {i === 0 ? (
                   <>
-                    At <span className="font-bold text-blue-900">Spardha Sarathi KAS Academy</span>, 
-                    we pioneer transformative learning experiences through cutting-edge pedagogy 
-                    and personalized mentorship, crafting tomorrow's civil service leaders.
+                    At{" "}
+                    <span className="font-bold text-blue-900">
+                      Spardha Sarathi KAS Academy
+                    </span>
+                    , we pioneer transformative learning experiences through
+                    cutting-edge pedagogy and personalized mentorship, crafting
+                    tomorrow's civil service leaders.
                   </>
                 ) : (
                   <>
-                    <span className="font-bold text-blue-900">ಸ್ಪರ್ಧಾ ಸರಥಿ KAS Academy</span> ನಲ್ಲಿ, 
-                    ನಾವು ಆಧುನಿಕ ಬೋಧನಾ ವಿಧಾನಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಮಾರ್ಗದರ್ಶನದ ಮೂಲಕ ಭವಿಷ್ಯದ ಸಿವಿಲ್ ಸರ್ವಿಸ್ 
-                    ನಾಯಕರನ್ನು ರೂಪಿಸುತ್ತಿದ್ದೇವೆ.
+                    <span className="font-bold text-blue-900">
+                      ಸ್ಪರ್ಧಾ ಸರಥಿ KAS Academy
+                    </span>{" "}
+                    ನಲ್ಲಿ, ನಾವು ಆಧುನಿಕ ಬೋಧನಾ ವಿಧಾನಗಳು ಮತ್ತು ವೈಯಕ್ತಿಕ ಮಾರ್ಗದರ್ಶನದ
+                    ಮೂಲಕ ಭವಿಷ್ಯದ ಸಿವಿಲ್ ಸರ್ವಿಸ್ ನಾಯಕರನ್ನು ರೂಪಿಸುತ್ತಿದ್ದೇವೆ.
                   </>
                 )}
               </p>
@@ -146,10 +186,14 @@ const AboutUs = () => {
               transition={{ delay: index * 0.1 }}
               className="group relative bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5`} />
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-5`}
+              />
               <div className="p-8 relative">
                 <div className="mb-6 flex justify-center">
-                  <div className={`p-5 rounded-2xl bg-gradient-to-br ${feature.color} shadow-lg`}>
+                  <div
+                    className={`p-5 rounded-2xl bg-gradient-to-br ${feature.color} shadow-lg`}
+                  >
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -160,34 +204,53 @@ const AboutUs = () => {
                   {feature.text}
                 </p>
               </div>
-              <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity`} />
+              <div
+                className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} opacity-0 group-hover:opacity-100 transition-opacity`}
+              />
             </motion.div>
           ))}
         </div>
 
         {/* Achievements Section */}
         <motion.div 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl p-8 md:p-12 shadow-2xl mb-24"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {[
-              { number: "15K+", label: "Successful Students" },
-              { number: "98%", label: "Prelims Success Rate" },
-              { number: "200+", label: "Expert Faculty Members" },
-              { number: "50+", label: "Exam Patterns Mastered" },
-            ].map((stat, index) => (
-              <div key={index} className="p-4">
-                <div className="text-4xl font-bold text-white mb-2">{stat.number}</div>
-                <div className="text-sm text-blue-100 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+                ref={milestonesRef}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-16 rounded-3xl shadow-xl"
+              >
+                <div className="max-w-4xl mx-auto text-center">
+                  <h2 className="text-3xl font-bold mb-8">Our Journey So Far</h2>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div>
+                      <div className="text-4xl font-bold mb-2">
+                        <AnimatedNumber value={99} />+
+                      </div>
+                      <div className="text-sm">Successful Students</div>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold mb-2">
+                        <AnimatedNumber value={15} />+
+                      </div>
+                      <div className="text-sm">Expert Faculty</div>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold mb-2">
+                        <AnimatedNumber value={98} />%
+                      </div>
+                      <div className="text-sm">Satisfaction Rate</div>
+                    </div>
+                    <div>
+                      <div className="text-4xl font-bold mb-2">
+                        <AnimatedNumber value={50} />+
+                      </div>
+                      <div className="text-sm">Exam Patterns Covered</div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
 
         {/* Philosophy Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="bg-white/90 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/20"
@@ -198,11 +261,12 @@ const AboutUs = () => {
               Our Educational Philosophy
             </h2>
             <p className="text-xl text-gray-700 leading-relaxed">
-              At Spardha Sarathi, we blend ancient wisdom with modern technology, creating a 
-              learning ecosystem that nurtures both intellectual growth and emotional resilience. 
-              Our 360° approach combines rigorous academic training with mindfulness practices, 
-              ensuring our students develop the complete skill set needed for administrative 
-              excellence.
+              At Spardha Sarathi, we blend ancient wisdom with modern
+              technology, creating a learning ecosystem that nurtures both
+              intellectual growth and emotional resilience. Our 360° approach
+              combines rigorous academic training with mindfulness practices,
+              ensuring our students develop the complete skill set needed for
+              administrative excellence.
             </p>
           </div>
         </motion.div>
