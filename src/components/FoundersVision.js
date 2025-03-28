@@ -1,29 +1,86 @@
-import { motion } from 'framer-motion';
-import { FaQuoteLeft, FaHandshake, FaBullseye, FaYoutube } from 'react-icons/fa';
+import { motion, useMotionValue, useTransform, animate, useInView } from 'framer-motion';
+import { FaQuoteLeft, FaHandshake, FaBullseye } from 'react-icons/fa';
+import { useEffect, useRef } from 'react';
 
+// Reusable animated number component with viewport detection
+const AnimatedNumber = ({ value }) => {
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, Math.round);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
+  useEffect(() => {
+    if (isInView) {
+      const controls = animate(count, value, {
+        duration: 2,
+        ease: "easeOut"
+      });
+      return controls.stop;
+    }
+  }, [count, value, isInView]);
+
+  return <motion.span ref={ref}>{rounded}</motion.span>;
+};
 const FoundersVision = () => {
+  const milestonesRef = useRef(null);
+  const isMilestonesInView = useInView(milestonesRef, { margin: "-100px 0px" });
+
   return (
-    <div className=" pt-28 min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className="pt-28 min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-7xl mx-auto text-center mb-16"
-      >
-        <div className="relative inline-block">
-          <div className="absolute -inset-2 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full blur-lg opacity-30" />
-          <img 
-            src="/founder-image.jpg" 
-            alt="Founder"
-            className="relative w-48 h-48 rounded-full border-4 border-white shadow-xl mx-auto"
-          />
-        </div>
-        <h1 className="mt-6 text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-          Adarsh Kela
-        </h1>
-        <p className="text-xl text-gray-600 mt-2">Founder</p>
-      </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="max-w-7xl mx-auto text-center mb-16 px-4"
+>
+  <div className="relative inline-block transform-gpu group">
+    {/* Animated gradient background */}
+    <div className="absolute -inset-3  blur-xl opacity-30 
+                  animate-gradient-rotate rounded-full" />
+    
+    {/* Professional image styling */}
+    <div className="relative overflow-hidden rounded-xl border-8 border-white shadow-2xl 
+                   mx-auto transition-all duration-500 hover:shadow-3xl">
+      <img 
+        src="/Snapinsta.jpg" 
+        alt="Adarsh Kela - Founder"
+        className="w-72 h-72 md:w-80 md:h-80 object-cover transform transition-transform 
+                 duration-300 hover:scale-105"
+      />
+    </div>
+
+    
+  </div>
+
+  {/* Founder information */}
+  <div className="mt-8 space-y-3">
+    <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text 
+                  text-transparent inline-block">
+      Adarsh Kela
+     
+    </h1>
+    
+    <p className="text-2xl text-gray-700 font-medium">Founder</p>
+    
+    <div className="flex justify-center items-center gap-4 mt-4">
+      
+    </div>
+  </div>
+
+  {/* Add to global CSS */}
+  {/* <style jsx global>{`
+    @keyframes gradient-rotate {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animate-gradient-rotate {
+      background-size: 200% 200%;
+      animation: gradient-rotate 8s ease infinite;
+    }
+  `}</style> */}
+</motion.div>
 
       {/* Vision Statement */}
       <motion.div 
@@ -149,6 +206,7 @@ const FoundersVision = () => {
 
       {/* Milestones */}
       <motion.div 
+        ref={milestonesRef}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         className="bg-gradient-to-r from-purple-600 to-blue-600 text-white py-16 rounded-3xl shadow-xl"
@@ -157,19 +215,27 @@ const FoundersVision = () => {
           <h2 className="text-3xl font-bold mb-8">Our Journey So Far</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-4xl font-bold mb-2">15K+</div>
+              <div className="text-4xl font-bold mb-2">
+                <AnimatedNumber value={99} />+
+              </div>
               <div className="text-sm">Successful Students</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">200+</div>
+              <div className="text-4xl font-bold mb-2">
+                <AnimatedNumber value={15} />+
+              </div>
               <div className="text-sm">Expert Faculty</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">95%</div>
+              <div className="text-4xl font-bold mb-2">
+                <AnimatedNumber value={98} />%
+              </div>
               <div className="text-sm">Satisfaction Rate</div>
             </div>
             <div>
-              <div className="text-4xl font-bold mb-2">50+</div>
+              <div className="text-4xl font-bold mb-2">
+                <AnimatedNumber value={50} />+
+              </div>
               <div className="text-sm">Exam Patterns Covered</div>
             </div>
           </div>
