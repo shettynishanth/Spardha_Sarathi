@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <div className="pt-16 relative overflow-hidden bg-gradient-to-b from-purple-50 to-blue-50 min-h-screen">
+     <div className="pt-16 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-blue-50 min-h-screen">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 z-0">
         <motion.div 
@@ -32,10 +32,9 @@ const AboutUs = () => {
           className="text-center mb-20 space-y-6"
         >
           <div className="inline-block relative">
-            <div className="absolute -inset-2  blur-2xl opacity-30 rounded-full" />
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent relative">
-            ಸ್ಪರ್ಧ ಸಾರಥಿ
-              <span className="absolute -top-4 -right-8 text-4xl">✨</span>
+            <div className="absolute -inset-[10px] blur-3xl opacity-40 rounded-full" />
+            <h1 className="text-5xl md:text-8xl font-black bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-500 bg-clip-text text-transparent relative tracking-tighter leading-tight">
+              ಸ್ಪರ್ಧಾ ಸಾರಥಿ
             </h1>
           </div>
           <motion.p 
