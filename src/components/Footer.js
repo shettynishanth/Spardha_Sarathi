@@ -146,61 +146,45 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Developer Info */}
-<div className="flex flex-col items-center justify-center p-4 bg-white/5 backdrop-blur-sm rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 space-y-3 md:space-y-0 md:flex-row md:space-x-6">
-  <div className="flex items-center space-x-2 group">
-        <span className="text-sm font-medium text-gray-400">Crafted with</span>
-    <div className="animate-pulse">❤️</div> 
-    <span className="text-sm font-medium text-gray-400">by</span>
-  </div>
+         {/* Developer Info */}
+          <div className="flex flex-col items-center justify-center   space-y-4">
+            <div className="flex items-center space-x-3 group">
+              <span className="text-sm font-medium text-gray-400/80">
+                Crafted with
+              </span>
+              <div className="animate-pulse text-red-400">❤️</div>
+              <span className="text-sm font-medium text-gray-400/80">
+                by Spardha Sarathi Team
+              </span>
+            </div>
 
-  <div className="flex items-center space-x-4">
-    <div className="flex items-center space-x-3">
-      <a
-        href="/AdminLogin"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group relative text-lg font-semibold hover:text-white transition-colors duration-200"
-      >
-        
-        <span className="ml-2 px-2 py-1 text-xs rounded-full bg-blue-400/20 text-blue-300 group-hover:bg-blue-400/30 transition-colors duration-200">
-          Admin
-        </span>
-        <span className="absolute -right-4 top-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-          ↗
-        </span>
-      </a>
-    </div>
-    
-    <div className="flex space-x-3">
-      <a
-        href="mailto:shettynishanth100@gmail.com"
-        className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
-        title="Email"
-      >
-        <FaEnvelope className="text-blue-400 w-5 h-5 hover:text-blue-300" />
-      </a>
-      <a
-        href="https://github.com/yourprofile"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
-        title="GitHub"
-      >
-        <FaGithub className="text-purple-400 w-5 h-5 hover:text-purple-300" />
-      </a>
-      <a
-        href="https://linkedin.com/in/yourprofile"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors duration-200"
-        title="LinkedIn"
-      >
-        <FaLinkedin className="text-cyan-400 w-5 h-5 hover:text-cyan-300" />
-      </a>
-    </div>
-  </div>
-</div>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
+              <div className="flex items-center space-x-4">
+                <a
+                  href="/AdminLogin"
+                  className="relative font-medium text-blue-300 hover:text-blue-200 transition-colors duration-200"
+                >
+                  <span className="px-3 py-1.5 rounded-full bg-blue-500/20 backdrop-blur-sm border border-blue-400/30">
+                    Admin Portal
+                  </span>
+                  <span className="absolute -right-3 -top-2 text-xs text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                    ↗
+                  </span>
+                </a>
+              </div>
+
+              <div className="hidden md:block w-px h-6 bg-white/10"></div>
+
+              <div className="flex items-center space-x-4">
+                <a
+                  href="mailto:shettynishanth100@gmail.com"
+                  className="text-sm font-medium text-gray-400 hover:text-cyan-300 transition-colors duration-200 underline-offset-4 hover:underline"
+                >
+                  Contact Support
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Back to Top Button */}
