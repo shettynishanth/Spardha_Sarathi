@@ -3,7 +3,7 @@ import { FaQuoteLeft, FaHandshake, FaBullseye, FaYoutube } from 'react-icons/fa'
 
 const FoundersVision = () => {
   return (
-    <div className=" pt-28 min-h-screen bg-gradient-to-b from-purple-50 to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
+    <div className=" pt-28 min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-16 px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
