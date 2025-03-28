@@ -37,7 +37,7 @@ const students = [
 
 const ResultPage = () => {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-20 relative overflow-hidden pt-40">
+           <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50 py-12 px-4 sm:px-6 lg:px-20 relative overflow-hidden pt-40">
         {/* Animated Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full opacity-10">
           <div className="absolute top-20 -left-20 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply animate-blob"></div>
